@@ -1,0 +1,63 @@
+Content Inventory
+
+1. Site navigation
+    - Bar / widget that allows navigation throughout the Site
+    - Will be 'mostly' an SPA to begin with
+    - Fixed at top of page
+    - Potential pages:
+      - Main SPA-style page
+      - Individual project pages (include in main page to begin with)
+    - Core navigation sections:
+      - Landing
+      - Services
+      - Projects / Work
+      - Testimonials
+      - Contact
+
+2. Logo / Branding
+    - Pixel Sketch brand
+    - Incorporated home / top-of-page link
+    - Should relate to pixels and sketching + web development for good branding
+    - Must make site instantly associated with company
+
+3. Landing
+    - First section user sees when page loads
+    - Logo / company name
+    - Company message / short mission statement
+    - Links to:
+      - Services
+      - Projects
+
+4. Persistent Site Navigation
+    - Bar / widget that appears after top navigation disappears from scrolling
+    - Entry / exit effect
+
+5. Services
+    - List of services Pixel Sketch provides:
+      - Web Design
+      - Web Development
+      - Logo Design
+      - Branding
+      - Bespoke CMS
+      - Web Hosting
+      - UX Design
+      - eCommerce Integration
+    - Specialisation
+
+6. Projects / Work
+    - Past Work
+    - Company names
+    - Short descriptions as overlay text
+    - Links to live examples (when applicable)
+
+7. Testimonials
+    - Previous client testimonial quotes
+    - Grid or carousel
+
+8. Contact
+    - Pixel Sketch email
+    - Phone number
+
+9. Footer
+    - Copyright message
+    - Possibility for additional site navigation
