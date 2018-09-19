@@ -1,0 +1,48 @@
+{
+  "name": "pixel-sketch",
+  "version": "1.0.0",
+  "description": "Pixel Sketch web development main site.",
+  "main": "index.js",
+  "scripts": {
+    "start": "webpack-dev-server --open",
+    "start-external": "webpack-dev-server --host 0.0.0.0",
+    "build": "NODE_ENV='production' webpack -p",
+    "create-docs": "jsdoc app -r -d docs"
+  },
+  "babel": {
+    "presets": [
+      "@babel/preset-env",
+      "@babel/preset-react"
+    ]
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/adamjoyce/pixel-sketch.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/adamjoyce/pixel-sketch/issues"
+  },
+  "homepage": "https://github.com/adamjoyce/pixel-sketch#readme",
+  "devDependencies": {
+    "@babel/core": "^7.1.0",
+    "@babel/polyfill": "^7.0.0",
+    "@babel/preset-env": "^7.1.0",
+    "@babel/preset-react": "^7.0.0",
+    "babel-loader": "^8.0.2",
+    "babel-plugin-styled-components": "^1.7.1",
+    "css-loader": "^1.0.0",
+    "html-webpack-plugin": "^3.2.0",
+    "style-loader": "^0.23.0",
+    "webpack": "^4.19.1",
+    "webpack-cli": "^3.1.0",
+    "webpack-dev-server": "^3.1.8",
+    "webpack-html-plugin": "^0.1.1"
+  },
+  "dependencies": {
+    "react": "^16.5.1",
+    "react-dom": "^16.5.1",
+    "styled-components": "^4.0.0-beta.7"
+  }
+}
