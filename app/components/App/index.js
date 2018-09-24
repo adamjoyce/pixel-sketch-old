@@ -1,6 +1,9 @@
 import React from 'react';
 
-import {GlobalStyle, GridWrapper, EmptyCell} from './style';
+import {GlobalStyle, Button} from './style';
+import BackgroundSVG from '../BackgroundSVG';
+import LogoSVG from '../LogoSVG';
+import Overlay from '../Overlay';
 
 /**
  * Wrapper class for the entire website.
@@ -8,14 +11,17 @@ import {GlobalStyle, GridWrapper, EmptyCell} from './style';
 class App extends React.Component {
   /**
    * App constructor.
+   * @constructor
    */
   constructor(props) {
     super(props);
     this.state = {
       windowHeight: '',
-      windowWidth: ''
+      windowWidth: '',
+      overlayOpen: false
     }
     this.updateWindowDimensions = this.updateWindowDimensions.bind(this);
+    this.toggleOverlayState = this.toggleOverlayState.bind(this);
   }
 
   /**
@@ -35,6 +41,7 @@ class App extends React.Component {
 
   /**
    * Sets the window's current dimensions in state.
+   * @param {object} prevState - The state before the window dimensions changed.
    */
   updateWindowDimensions(prevState) {
     const newHeight = window.innerHeight;
@@ -44,19 +51,29 @@ class App extends React.Component {
       windowHeight: newHeight,
       windowWidth: newWidth
     });
+  }
 
-    // Recalculate the background grid dimensions.
-    this.calculateGridDimensions(newHeight, newWidth);
+  /**
+   * Toggles the 'pixel' menu overlay state.
+   */
+  toggleOverlayState() {
+    const {overlayOpen} = this.state;
+    this.setState(() => ({overlayOpen: !overlayOpen}));
   }
 
   render() {
-    const {windowHeight, windowWidth} = this.state;
-    console.log({windowHeight});
-    console.log({windowWidth});
+    const {overlayOpen} = this.state;
+    console.log({overlayOpen});
 
     return (
       <React.Fragment>
-        <div>React works! x</div>
+        <GlobalStyle />
+        <LogoSVG />
+        <Button onClick={() => this.toggleOverlayState()}/>
+        <Overlay
+          overlayOpen={overlayOpen}
+          toggleOverlayState={this.toggleOverlayState}
+        />
       </React.Fragment>
     );
   }

@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="64px" height="64px" viewBox="0 0 64 64" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 51.3 (57544) - http://www.bohemiancoding.com/sketch -->
+    <title>Artboard</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Artboard" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <path class="stroke" d="M32,1.11803399 L0.809016994,63.5 L63.190983,63.5 L32,1.11803399 Z" id="Triangle" stroke="#979797"></path>
+        <circle class="stroke" id="Oval" stroke="#979797" cx="32" cy="42" r="10"></circle>
+        <circle id="Oval-2" fill="#D8D8D8" cx="25" cy="35" r="2"></circle>
+        <circle id="Oval-3" fill="#D8D8D8" cx="32" cy="32" r="2"></circle>
+        <circle id="Oval-4" fill="#D8D8D8" cx="22" cy="42" r="2"></circle>
+    </g>
+</svg>
