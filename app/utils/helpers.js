@@ -20,3 +20,16 @@ export function shuffle(array) {
 
   return array;
 }
+
+/**
+ * Calculates the delay before the fill animation should take place to make it
+ * uniform with the rest of the SVG paths.
+ * @param {integer} n - The nth position of the path.
+ * @param {integer} drawInterval - The time (in ms) between drawing letters.
+ * @param {integer} drawDuration - The time (in ms) it takes to draw a letter.
+ * @param {integer} pathCount - The number of paths (letters) in the SVG.
+ * @return {integer} - The delay the given nth path should wait before filling.
+ */
+export function calculateFillDelay(n, drawInterval, drawDuration, pathCount) {
+  return drawInterval * (pathCount - n) + (drawDuration - drawInterval);
+}

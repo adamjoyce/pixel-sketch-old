@@ -18,7 +18,9 @@ export const GlobalStyle = createGlobalStyle`
 
 export const Button = styled.button`
   background: palevioletred;
+  bottom: 0;
   height: 100px;
+  position: absolute;
   width: 200px;
 
   :active {

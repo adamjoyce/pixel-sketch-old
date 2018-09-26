@@ -4,7 +4,6 @@ export const Wrapper = styled.div`
   font-size: 5rem;
   height: 100%;
   left: 0;
-  opacity: 0.5;
   pointer-events: ${props => props.clickThroughMenu ? 'none' : 'auto'};
   position: fixed;
   top: 0;
@@ -18,7 +17,7 @@ ${'' /* Hide all the 'pixels' to begin with. */}
 `;
 
 export const Menu = styled.div`
-  background: blue;
+  background: green;
   bottom: 0;
   display: ${props => props.menuVisible ? 'block' : 'none'};
   left: 0;
