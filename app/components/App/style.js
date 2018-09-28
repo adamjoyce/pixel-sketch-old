@@ -12,6 +12,7 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #app {
+    background: black;
     height: 100%;
   }
 `;
