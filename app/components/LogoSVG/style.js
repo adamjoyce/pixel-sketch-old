@@ -148,6 +148,7 @@ export const PathGroup = styled.g`
       props.paths.length > 0 ? props.paths[14].length : null};
     stroke-dashoffset: ${props =>
       props.paths.length > 0 ? props.paths[14].length : null};
+    stroke-opacity: 0;
   }
 
   ${'' /* KETCH */}
@@ -215,6 +216,7 @@ export const PathGroup = styled.g`
   @keyframes FillIn {
     to {
       fill-opacity: 1;
+      stroke-opacity: 1;
     }
   }
 `;

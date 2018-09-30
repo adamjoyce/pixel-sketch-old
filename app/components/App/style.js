@@ -1,6 +1,5 @@
 import styled, {createGlobalStyle} from 'styled-components';
-
-// import SVG from '../../static/images/scribble.svg';
+import PropTypes from 'prop-types';
 
 export const GlobalStyle = createGlobalStyle`
   html {
@@ -12,10 +11,14 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   #app {
-    background: black;
+    background: ${props => props.theme.colors.backgroundPrimary};
     height: 100%;
   }
 `;
+
+GlobalStyle.propTypes = {
+  theme: PropTypes.object.isRequired
+}
 
 export const Button = styled.button`
   background: palevioletred;
@@ -23,8 +26,4 @@ export const Button = styled.button`
   height: 100px;
   position: absolute;
   width: 200px;
-
-  :active {
-    background: blue;
-  }
 `;

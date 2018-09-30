@@ -16,7 +16,7 @@ class Overlay extends React.Component {
     super(props);
     this.state = {
       paths: [],
-      animationInterval: 20,
+      intervalBounds: {lower: 10, upper: 20},
       clickThroughMenu: true,
       menuVisible: false
     }
@@ -52,21 +52,40 @@ class Overlay extends React.Component {
    * Handles the opening and closing of the 'pixel' menu overlay.
    */
   togglePixelOverlay(isOpening) {
-    const {paths, animationInterval, clickThroughMenu} = this.state;
+    const {theme} = this.props;
+    const {paths, intervalBounds, clickThroughMenu} = this.state;
 
     // Opening / Closing 'pixel' animation.
     let timer = 0;
     for (let i = 0; i < paths.length; i++) {
       const path = paths[i];
       window.setTimeout(() => {
-        // Display / hide this pixel.
-        (isOpening
-          ? path.style.display = "block"
-          : path.style.display = "none");
+        if (isOpening) {
+          if (i > 0) {
+            // Reset previously activated pixel's fill color.
+            paths[i-1].style.fill = theme.colors.secondary;
+          }
+          // Display the pixel.
+          path.style.display = "block"
+        }
+        else {
+          // Closing menu.
+          if (i < paths.length - 1) {
+            if (i === 0) {
+              path.style.fill = theme.colors.primary;
+            }
+            // Set the pixel's active color before hiding.
+            paths[i+1].style.fill = theme.colors.primary;
+          }
+          // Hide the pixel.
+          path.style.display = "none";
+        }
 
         // After the last pixel has opened / closed.
         if (i === paths.length - 1) {
           if (isOpening) {
+            // Reset the pixel color.
+            path.style.fill = theme.colors.secondary;
             // Display menu and close button.
             this.toggleMenuVisibility();
           }
@@ -76,7 +95,7 @@ class Overlay extends React.Component {
           }
         }
       }, timer);
-      timer += animationInterval;
+      timer += Math.floor(Math.random() * intervalBounds.upper) + intervalBounds.upper;
     }
 
     if (isOpening) {
@@ -100,7 +119,7 @@ class Overlay extends React.Component {
    * Renders the component.
    */
    render() {
-     const {overlayOpen, toggleOverlayState} = this.props;
+     const {overlayOpen, toggleOverlayState, theme} = this.props;
      const {clickThroughMenu, menuVisible} = this.state;
      console.log({overlayOpen});
      console.log({toggleOverlayState});
@@ -114,7 +133,10 @@ class Overlay extends React.Component {
            viewBox="0 0 1440 1024"
            preserveAspectRatio="none"
            xmlns="http://www.w3.org/2000/svg">
-           <g ref={this.pathGroup} fill="green" fillRule="evenodd">
+           <g
+             ref={this.pathGroup}
+             fill={theme.colors.primary}
+             fillRule="evenodd">
              <path d="M-1-1h182v207H-1z"/>
              <path d="M-1 205h182v207H-1z"/>
              <path d="M-1 411h182v207H-1z"/>
@@ -157,10 +179,11 @@ class Overlay extends React.Component {
              <path d="M1266 823h182v207h-182z"/>
            </g>
          </svg>
-         <Menu menuVisible={menuVisible} />
+         <Menu menuVisible={menuVisible} theme={theme} />
          <CloseButton
            menuVisible={menuVisible}
-           onClick={() => toggleOverlayState()}>
+           onClick={() => toggleOverlayState()}
+           theme={theme}>
            X
          </CloseButton>
        </Wrapper>
@@ -170,7 +193,8 @@ class Overlay extends React.Component {
 
 Overlay.propTypes = {
   overlayOpen: PropTypes.bool.isRequired,
-  toggleOverlayState: PropTypes.func.isRequired
+  toggleOverlayState: PropTypes.func.isRequired,
+  theme: PropTypes.object.isRequired
 }
 
 export default Overlay;
