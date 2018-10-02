@@ -3,15 +3,15 @@ import PropTypes from 'prop-types';
 
 export const GlobalStyle = createGlobalStyle`
   html {
-    height: 100%;
+    min-height: 100%;
+    position: relative;
   }
 
   body {
-    height: 100%;
+    min-height: 100%;
   }
 
   #app {
-    background: ${props => props.theme.colors.backgroundPrimary};
     height: 100%;
   }
 `;

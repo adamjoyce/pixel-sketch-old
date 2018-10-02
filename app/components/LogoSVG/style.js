@@ -3,8 +3,11 @@ import PropTypes from 'prop-types';
 
 import {calculateFillDelay} from '../../utils/helpers';
 
-export const SVGWrapper = styled.svg`
-  display: block;
+export const SVGWrapper = styled.div`
+  background: ${props => props.theme.colors.backgroundPrimary};
+  border: 2px solid ${props => props.theme.colors.backgroundSecondary};
+  display: inline-block;
+  padding: 2em;
 `;
 
 export const PathGroup = styled.g`
@@ -15,7 +18,6 @@ export const PathGroup = styled.g`
   ${'' /* Aligns fill animations and setups stroke lengths. */}
   ${'' /* Origami P triangles. */}
   path:nth-of-type(1) {
-    ${props => console.log(props.paths.length)}
     animation-delay: 0ms, ${props =>
       calculateFillDelay(
         8, props.drawInterval, props.drawDuration, props.paths.length, props.strokeToFillInterval

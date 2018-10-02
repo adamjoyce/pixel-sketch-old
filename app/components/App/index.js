@@ -3,7 +3,6 @@ import {ThemeProvider} from 'styled-components';
 
 import {GlobalStyle, Button} from './style';
 import {themeMain as theme} from '../../styles/themes';
-import BackgroundSVG from '../BackgroundSVG';
 import LogoSVG from '../LogoSVG';
 import Overlay from '../Overlay';
 

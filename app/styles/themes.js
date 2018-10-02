@@ -4,6 +4,7 @@ export const themeMain = {
     secondary: '#ff2e63',
     tertiary: '#fff',
     backgroundPrimary: '#252a34',
+    backgroundSecondary: '#363e4d',
 
     // Origami P Shades.
     pStroke: '#53d4d1',
