@@ -193,8 +193,7 @@ class Overlay extends React.Component {
 
 Overlay.propTypes = {
   overlayOpen: PropTypes.bool.isRequired,
-  toggleOverlayState: PropTypes.func.isRequired,
-  theme: PropTypes.object.isRequired
+  toggleOverlayState: PropTypes.func.isRequired
 }
 
 export default Overlay;

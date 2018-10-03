@@ -17,7 +17,7 @@ class LogoSVG extends React.Component {
       drawDuration: 1000,
       drawInterval: 200,
       fillDuration: 1000,
-      strokeToFillInterval: 200
+      strokeToFillInterval: 100
     }
     this.pathGroup = React.createRef();
   }

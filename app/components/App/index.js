@@ -3,6 +3,7 @@ import {ThemeProvider} from 'styled-components';
 
 import {GlobalStyle, Button} from './style';
 import {themeMain as theme} from '../../styles/themes';
+import BackgroundLines from '../BackgroundLines';
 import LogoSVG from '../LogoSVG';
 import Overlay from '../Overlay';
 
@@ -64,19 +65,18 @@ class App extends React.Component {
 
   render() {
     const {overlayOpen} = this.state;
-    console.log({overlayOpen});
-
     return (
       <ThemeProvider theme={theme}>
         <React.Fragment>
-          <GlobalStyle theme={theme} />
-          <LogoSVG theme={theme} />
-          <Button onClick={() => this.toggleOverlayState()} />
-          <Overlay
+          <GlobalStyle />
+          {/* <BackgroundLines theme={theme} /> */}
+          {/* <LogoSVG theme={theme} /> */}
+          {/* <Button onClick={() => this.toggleOverlayState()} /> */}
+          {/* <Overlay
             overlayOpen={overlayOpen}
             toggleOverlayState={this.toggleOverlayState}
             theme={theme}
-          />
+          /> */}
         </React.Fragment>
       </ThemeProvider>
     );

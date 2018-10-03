@@ -3,22 +3,17 @@ import PropTypes from 'prop-types';
 
 export const GlobalStyle = createGlobalStyle`
   html {
-    min-height: 100%;
-    position: relative;
+    height: 100%;
   }
 
   body {
-    min-height: 100%;
+    height: 100%;
   }
 
   #app {
     height: 100%;
   }
 `;
-
-GlobalStyle.propTypes = {
-  theme: PropTypes.object.isRequired
-}
 
 export const Button = styled.button`
   background: palevioletred;

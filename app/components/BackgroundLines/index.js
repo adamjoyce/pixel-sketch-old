@@ -12,8 +12,8 @@ class BackgroundLines extends React.Component {
     this.state = {
       ctx: '',
       lineSpacing: 30,
-      lineColor: props.theme.colors.primary,
-      lineWidth: 0.5,
+      lineColor: '#dcb5ff',
+      lineWidth: 10,
       minLineLength: 2,
       maxLineLength: 10,
       lineLengthMultiplier: 20,

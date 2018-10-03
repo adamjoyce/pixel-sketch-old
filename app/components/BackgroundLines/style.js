@@ -1,7 +1,7 @@
 import styled from 'styled-components';
 
 export const Canvas = styled.canvas`
-  background: ${props => props.theme.colors.backgroundPrimary};
+  background: #d9f2ff;
   bottom: 0;
   height: 100%;
   left: 0;
